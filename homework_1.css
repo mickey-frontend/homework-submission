@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vw;
+    margin: 0;
+
+}
+
+.item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 100px minmax(150px, auto);
+    grid-template-areas:
+        'header header'
+        'aside main';
+    ;
+}
+
+.header{
+    grid-area: header;
+    background-color: darkgrey;
+}
+
+.asider{
+    grid-area: aside;
+    background-color: burlywood;
+}
+
+.main{
+    grid-area: main;
+    background-color: indigo;
+}
+
+@media screen and (max-width: 576px){
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+}
